@@ -49,7 +49,7 @@ async def sslist(bot, message):
                     InlineKeyboardButton('Next Page >', callback_data='np')
                   ]]        
         reply_markup = InlineKeyboardMarkup(buttons)
-        p = await message.reply_text(text=SLIST, reply_markup=reply_markup)
+        p = await message.reply_text(SLIST, reply_markup=reply_markup)
         await asyncio.sleep(60)
         await p.delete()
     
@@ -87,7 +87,7 @@ if query.data == "np":
                     InlineKeyboardButton('Back', callback_data='fp')
                   ]]        
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_text(text=SLIST, reply_markup=reply_markup)
+        await query.message.edit_text(text=SLIST, reply_markup=reply_markup)
 
 elif query.data == "fp":
         buttons = [[
@@ -124,7 +124,7 @@ elif query.data == "fp":
                     InlineKeyboardButton('Next Page >', callback_data='np')
                   ]]        
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_text(text=SLIST, reply_markup=reply_markup)
+        await query.message.edit_text(text=SLIST, reply_markup=reply_markup)
 
 elif query.data == "rk":
         buttons = [[

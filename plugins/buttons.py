@@ -56,7 +56,7 @@ async def sslist(bot, message):
 @Client.on_callback_query()
 async def sbuttons(client: Client, query: CallbackQuery):    
     if query.data == "np":
-            buttons = [[
+          buttons = [[
                         InlineKeyboardButton('Namah Laxmi Narayan', callback_data='namah'),
                         InlineKeyboardButton('Uttar Ramayan', callback_data=f'ur')
                     ],[

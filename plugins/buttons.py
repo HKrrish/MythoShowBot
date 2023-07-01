@@ -52,7 +52,9 @@ async def sslist(bot, message):
         p = await message.reply_text(SLIST, reply_markup=reply_markup)
         await asyncio.sleep(60)
         await p.delete()
-    
+        
+@Client.on_callback_query()
+async def sbuttons(client: Client, query: CallbackQuery):    
 if query.data == "np":
         buttons = [[
                     InlineKeyboardButton('Namah Laxmi Narayan', callback_data='namah'),
